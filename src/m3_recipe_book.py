@@ -1,5 +1,5 @@
 ###############################################################################
-# TODO: 1. (6 pts)
+# DONE: 1. (6 pts)
 #
 #   For this _TODO_, we are going to bring together many of the concepts that
 #   we have learned.
@@ -35,9 +35,37 @@
 #
 #   Once you have done this, then change the above _TODO_ to DONE.
 ###############################################################################
+print("Welcome to Recipe Book!")
 
+recipes = []
+
+while True:
+    recipe = {}
+    
+    recipe_name = input("Please enter a recipe name: ")
+    if recipe_name == "end":
+        break
+    
+    recipe["name"] = recipe_name
+    ingredients = set()
+    
+    while True:
+        ingredient = input("Please enter an ingredient: ")
+        if ingredient == "end":
+            break
+        ingredients.add(ingredient)
+    
+    recipe["ingredients"] = ingredients
+    recipes.append(recipe)
+
+print("\nYour recipes: \n ")
+for recipe in recipes:
+    print("Recipe:", recipe["name"])
+    print("Ingredients:", ", ".join(recipe["ingredients"]))
+    print()
+#Got pretty stuck so used I Chat GPT to help print things on multiple lines and general formatting
 ###############################################################################
-# TODO: 2. EXTRA CREDIT (2 pts)
+# DONE: 2. EXTRA CREDIT (2 pts)
 #
 #   For this extra credit _TODO_, try to look into how you could print out the
 #   recipes in a better format that is a little easier to read. Your solution
